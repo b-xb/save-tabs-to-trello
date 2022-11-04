@@ -339,7 +339,7 @@ function setTrelloEventHandlers(){
     });
   $("#trello-list-position")
     .change(function () {
-      position = positionSelected = $("#trello-list-position").find(":selected").val();
+      position = $("#trello-list-position").find(":selected").val();
       if (position == "precise") {
         console.log("false");
         $("#trello-list-exact-position").prop( "disabled", false );
