@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Save Links From Tabs</title>
+    <style>
+      :root {
+        --buttons-bg-color:rgba(0,0,0,0.04);
+        --buttons-bg-blur:blur(5px);
+      }
+
+      body {
+        margin: 0px;
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+      main {
+        padding: 8px 8px 96px;
+      }
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+
+      .refresh {
+        cursor: pointer;
+      }
+
+      #top-section{
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+      }
+
+      #top-section p {
+        margin: 0px;
+      }
+
+      #trello-filters {
+        padding: 8px 8px 8px;
+        color: white;
+        background: #026AA7;
+      }
+
+      #trello-list-exact-position {
+        text-align: center;
+      }
+
+      #trello-list-exact-position:disabled {
+        display:none;
+      }
+
+      #chrome-tab-filters {
+        padding: 8px 8px 8px;
+        background: var(--buttons-bg-color);
+        backdrop-filter: var(--buttons-bg-blur);
+      }
+
+      #session-title-span, #session-tags-span {
+        white-space: nowrap;
+      }
+
+      #save-buttons {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        width: 100vw;
+        padding: 8px 8px 8px;
+        background: var(--buttons-bg-color);
+        backdrop-filter: var(--buttons-bg-blur);
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+  </head>
+  <body>
+    <form id="the-form">
+    <div id="top-section">
+      <p id="trello-filters">
+        <span id="trello-list-select-span">
+          <label for="trello-workspaces">Workspace:</label>
+          <select id="trello-workspaces"></select>
+          <span id="refresh-workspaces" class="refresh">&#128260;</span>
+          <input id="open-trello-workspace" type="button" value="Go To Workspace">
+          <br>
+          <label for="trello-boards">Board:</label>
+          <select id="trello-boards"></select>
+          <span id="refresh-boards" class="refresh">&#128260;</span>
+          <input id="open-trello-board" type="button" value="Go To Board">
+          <br>
+          <label for="trello-lists">List:</label>
+          <select id="trello-lists"></select>
+          <span id="refresh-lists" class="refresh">&#128260;</span>
+          <label for="trello-list-position">Position:</label>
+          <select id="trello-list-position">
+            <option value="top" selected>Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="precise">Precise</option>
+          </select>
+          <input type="number" id="trello-list-exact-position" min="1" max="5000" value="1" disabled>
+          <!--
+          <br>
+          Save as:
+          <input type="radio" name="save-mode" value="cards-only"><label>Cards</label>
+          <input type="radio" name="save-mode" value="cards-with-attachments"><label>Cards w/ attachments</label>
+          <input type="radio" name="save-mode" value="attachments-only"><label>Attachments</label>
+          -->
+        </span>
+      </p>
+      <p id="chrome-tab-filters">
+        Tabs:
+        <br>
+        <span id="toggle-buttons">
+            <input id="select-all-button" type="button" value="Select All">
+            <input id="deselect-all-button" type="button" value="Deselect All">
+            <input id="tag-editor-toggle" type="button" value="Show/Hide tag editor">
+            <input id="url-display-toggle" type="button" value="Show/Hide urls">
+            <select id="devices">
+                <option value="this-window">This Window</option>
+            </select>
+        </span>
+      </p>
+    </div>
+
+    <main>
+      <div id="bookmarks"></div>
+    </main>
+    
+    <div id="save-buttons">
+        <div><span id="selected-count"></span></div>
+        <div><span id="results"></span></div>
+        <input id="save-selected" type="button" value="Save Selected">
+        <input id="save-selected-close-selected" type="button" value="Save & Close Selected">
+        <input id="save-selected-close-all" type="button" value="Save Selected, Close All">
+    </div>
+    </form>
+
+    <script src="jquery-3.6.1.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
