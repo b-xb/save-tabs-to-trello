@@ -28,6 +28,7 @@ const API_NAME_KEY = {
   workspaces: "displayName",
   boards: "name",
   lists: "name",
+  cards: "name",
 }
 
 const API_SUB_ITEM = {
@@ -64,7 +65,8 @@ const storageHandler = {
         }
         obj[prop] = value;
       } else {
-        updateSelectBoxOptions(prop,value);
+        if (prop != "cards")
+          updateSelectBoxOptions(prop,value);
         obj[prop] = value;
       }
     }
@@ -76,6 +78,10 @@ const STORAGE = new Proxy(_STORAGE, storageHandler);
 let successCount = 0;
 let failCount = 0;
 let bookmarkCount = 0;
+
+function getSelectedList() {
+  return $("#trello-lists option:selected")?.[0];
+}
 
 function getSelectedBoard() {
   return $("#trello-boards option:selected")?.[0];
@@ -176,7 +182,11 @@ function fetchListsForBoard(boardID){
 function getListPosition(){
   positionSelected = $("#trello-list-position").find(":selected").val();
   if (positionSelected == "precise")
-    return $("#trello-list-exact-position").val();
+    // listID = getSelectedList().value;
+    // apiGetRequest("cards",[listID]);
+    // wait for value to be updates...
+    // then return the value
+    return $("#trello-list-exact-position").val(); // then remove this line
   else
     return positionSelected;
 }
