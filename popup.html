@@ -92,33 +92,11 @@
           <select id="trello-workspaces"></select>
           <span id="refresh-workspaces" class="refresh">&#128260;</span>
           <input id="open-trello-workspace" type="button" value="Go To Workspace">
-          <!--
-          <label for="trello-list-position">Default Position:</label>
-          <select id="trello-list-position">
-            <option value="most recent">Default</option>
-            <option value="most recent">Most Recent</option>
-            <option value="top" selected>Top</option>
-            <option value="bottom">Bottom</option>
-            <option value="precise">Precise</option>
-          </select>
-          <input type="number" id="trello-list-exact-position" min="1" max="5000" value="1" disabled>
-          -->
           <br>
           <label for="trello-boards">Board:</label>
           <select id="trello-boards"></select>
           <span id="refresh-boards" class="refresh">&#128260;</span>
           <input id="open-trello-board" type="button" value="Go To Board">
-          <!--
-          <label for="trello-list-position">Position:</label>
-          <select id="trello-list-position">
-            <option value="most recent">Default</option>
-            <option value="most recent">Most Recent</option>
-            <option value="top" selected>Top</option>
-            <option value="bottom">Bottom</option>
-            <option value="precise">Precise</option>
-          </select>
-          <input type="number" id="trello-list-exact-position" min="1" max="5000" value="1" disabled>
-          -->
           <br>
           <label for="trello-lists">List:</label>
           <select id="trello-lists"></select>
@@ -133,16 +111,42 @@
           <input type="number" id="trello-list-exact-position" min="1" max="5000" value="1" disabled>
           <!--
           <br>
-          Settings
+          Set Defaults:
           <br>
-          <label for="trello-list-position">Default Position:</label>
-          <select id="trello-list-position">
+          Position:
+          <label for="trello-default-global-list-position">Global:</label>
+          <select id="trello-default-global-list-position">
             <option value="most recent">Most Recent</option>
             <option value="top" selected>Top</option>
             <option value="bottom">Bottom</option>
             <option value="precise">Precise</option>
           </select>
-          <input type="number" id="trello-list-exact-position" min="1" max="5000" value="1" disabled>
+          <input type="number" id="trello-default-global-exact-list-position" min="1" max="5000" value="1" disabled>
+          <label for="trello-default-workspace-list-position">Workspace:</label>
+          <select id="trello-default-workspace-list-position">
+            <option value="most recent">Most Recent</option>
+            <option value="top" selected>Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="precise">Precise</option>
+          </select>
+          <input type="number" id="trello-default-workspace-exact-list-position" min="1" max="5000" value="1" disabled>
+          <label for="trello-default-board-list-position">Board:</label>
+          <select id="trello-default-board-list-position">
+            <option value="most recent">Most Recent</option>
+            <option value="top" selected>Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="precise">Precise</option>
+          </select>
+          <input type="number" id="trello-default-board-exact-list-position" min="1" max="5000" value="1" disabled>
+          <label for="trello-default-list-position">List:</label>
+          <select id="trello-default-list-position">
+            <option value="most recent">Most Recent</option>
+            <option value="top" selected>Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="precise">Precise</option>
+          </select>
+          <input type="number" id="trello-default-exact-list-position" min="1" max="5000" value="1" disabled>
+          <br>
           Save as:
           <input type="radio" name="save-mode" value="cards-only"><label>Cards</label>
           <input type="radio" name="save-mode" value="cards-with-attachments"><label>Cards w/ attachments</label>
