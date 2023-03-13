@@ -552,21 +552,6 @@ function requestTabs(tabs) {
 }
 
 
-function getLinks() {
-  bookmarks = [];
-  $('.bookmark .tabToSave:checked').each(function (i, checkbox) {
-    bookmark_element = checkbox.parentElement;
-    bookmark = {
-      "title": $(bookmark_element).data("tabdata").title,
-      "url": $(bookmark_element).data("tabdata").url,
-      "tags": $(bookmark_element).find('.tag-editor').val()
-    };
-    bookmarks.push(bookmark);
-  });
-  return bookmarks;
-}
-
-
 function storeWindowInfo() {
   chrome.windows.getAll(
     function (windowObj, index) {
