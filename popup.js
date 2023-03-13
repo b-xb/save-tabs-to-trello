@@ -1,4 +1,3 @@
-
 // TRELLO API
 
 API_KEY = "90c50384a294b58d1bed1d35c80f7b13";
@@ -538,11 +537,13 @@ function requestTabs(tabs) {
       escapeHtml($(mydiv).data("tabdata").title) +
       "</a>" +
       "<br/>" +
-      "<span class='url-display' style='display: none;'>" +
+      "<span class='url-display'>" +
+      //"<span class='url-display' style='display: none;'>" +
       $(mydiv).data("tabdata").url +
       "<br/>" +
-      "</span>" +
-      "<input class='tag-editor' type='text' name='tags' size='100' >";
+      "</span>";
+      // "</span>" +
+      // "<input class='tag-editor' type='text' name='tags' size='100' >";
     form.appendChild(mydiv);
 
   });
@@ -676,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function () {
   storeDeviceInfo();
   storedRecentlyClosedInfo();
   deviceSessionSelectListener();
-  document.getElementById('tag-editor-toggle').addEventListener('click', toggleTagEditor);
+  //document.getElementById('tag-editor-toggle').addEventListener('click', toggleTagEditor);
   document.getElementById('url-display-toggle').addEventListener('click', toggleURLDisplay);
   document.getElementById('select-all-button').addEventListener('click', selectAll);
   document.getElementById('deselect-all-button').addEventListener('click', deselectAll);
