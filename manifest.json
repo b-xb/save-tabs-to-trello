@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Save multiple tabs to Trello",
-  "description": "Save multiple tabs to Trello",
+  "name": "Save tabs to Trello",
+  "description": "Save tabs to Trello",
   "version": "0.1",
   "permissions": [
     "storage",
