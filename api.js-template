@@ -1,0 +1,8 @@
+// Make a copy of this file and name it api.js
+// You can use the provided API key or replace this API key with your own
+//
+// If using the provided API key then visit this link and click on Allow to get your API token and paste it in below
+// https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&key=136d43afb4bd6e49971a92a613ffddaf
+
+API_KEY = "136d43afb4bd6e49971a92a613ffddaf";
+API_TOKEN = "XXXXXX";

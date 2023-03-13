@@ -1,11 +1,8 @@
 // TRELLO API
 
-API_KEY = "90c50384a294b58d1bed1d35c80f7b13";
-API_TOKEN = "0dec5515f1dbf9c8f896618168f6bc44d8d2fa2459ad279dd8c6ea79c38cbeca";
-API_BASE_URL="https://api.trello.com/";
-
 API_GET_PARAMS=`key=${API_KEY}&token=${API_TOKEN}`;
 API_POST_PARAMS={key:API_KEY,token:API_TOKEN};
+API_BASE_URL="https://api.trello.com/";
 
 API_GET_PATH = {
   workspaces: _ => `${API_BASE_URL}1/members/me/organizations?${API_GET_PARAMS}`,
