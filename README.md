@@ -10,9 +10,10 @@
 
 1. Open up the `save-tabs-to-trello-main` folder
 2. Make a copy of the file `api.js-template` and name it `api.js`
-3. Now visit [this link](https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&key=136d43afb4bd6e49971a92a613ffddaf) and click on Allow
-4. Make a note of the token provided (this will be a long sequence of random numbers and letters)
-5. Open up the `api.js` file in a text editor, replace `XXXXXX` with the token you have been provided, save the file and exit
+3. Now visit [this link](https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&key=136d43afb4bd6e49971a92a613ffddaf) 
+4. Log in to your Trello account (if required) and then click on Allow
+5. Make a note of the token provided (this will be a long sequence of random numbers and letters)
+6. Open up the `api.js` file in a text editor, replace `XXXXXX` with the token you have been provided, save the file and exit
 
 ### Install the extension
 
